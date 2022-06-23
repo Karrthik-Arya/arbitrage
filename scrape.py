@@ -101,6 +101,6 @@ def find_the_trades(ex_1, ex_2):
         trades =trades.append({'base':base, 'buy_from':buy_from,'sell_to':sell_to, 'buy_price':buy_price, 'sell_price':sell_price, 'diff(in%)':100*diff}, ignore_index=True)
 
     needed = trades.sort_values('diff(in%)', ascending=False)
-    return needed[:20].reset_index()
+    return needed[:20].reset_index(drop = True)
 if __name__=="__main__":
     print(find_the_trades())
